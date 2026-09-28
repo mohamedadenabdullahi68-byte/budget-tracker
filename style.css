@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+#main-heading {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.add-expense {
+    background-color: #e8f5e9;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.add-expense input {
+    display: block;
+    width: 300px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.expenses {
+    background-color: #fff3e0;
+    padding: 20px;
+}
