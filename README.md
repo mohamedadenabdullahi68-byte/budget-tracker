@@ -1,38 +1,115 @@
- ## Visual Design Challenge
+````markdown
+# SpendWise Dashboard
 
-This week, I improved the visual design of my existing Budget Tracker using CSS without adding new HTML structure or functionality.
+## Week 4: CSS Grid & Flexbox Dashboard
 
-### Color Palette
+This week, I rebuilt my Budget Tracker into a responsive SpendWise Dashboard Shell using modern CSS layout techniques.
 
-I used a consistent green, white, and light-gray color palette throughout the application. Green is used for the main heading, buttons, table headers, and section headings, while white and light gray provide clean backgrounds and contrast.
+The dashboard is a visual interface with realistic static financial information. No JavaScript functionality was added for this week's assignment.
 
-### Typography
+## Dashboard Features
 
-I used Google Fonts to improve readability and visual hierarchy:
+The dashboard contains:
 
-* **Merriweather** for main headings and section headings.
-* **Open Sans** for body text, form elements, buttons, and table content.
+- Sidebar navigation menu
+- Dashboard header
+- Monthly budget summary
+- Six financial category cards
+- Food
+- Transport
+- Rent
+- Entertainment
+- Savings
+- Utilities
 
-### Table and Form Styling
+## CSS Grid
 
-The expense table and Add Expense form were improved with:
+CSS Grid is used to create the overall dashboard layout and organize the six financial category cards.
 
-* Padding and spacing
-* Borders
-* Rounded corners
-* Styled table headers
-* Alternating table row colors
-* Hover effects
-* Focus effects on form inputs
-* Consistent button styling
+The desktop dashboard uses a sidebar and main content area. The category cards are arranged in a three-column grid.
 
-### CSS Box Model
+## Flexbox
 
-I intentionally used the CSS box model throughout the application:
+Flexbox is used inside:
 
-* **Margin** separates different sections.
-* **Padding** creates space inside cards, forms, and table cells.
-* **Borders** define sections and table cells.
-* **Border-radius** creates a modern rounded appearance.
+- Sidebar navigation
+- Dashboard header
+- Monthly budget summary
+- Individual financial cards
 
-The page heading, Add Expense form, and Expense Table are presented as distinct visual cards.
+This creates flexible and organized content layouts.
+
+## CSS Custom Properties
+
+The application uses CSS variables inside `:root` for the main theme.
+
+Variables include:
+
+- Brand color
+- Accent color
+- Surface color
+- Background color
+- Primary text color
+- Secondary text color
+- Border color
+
+Using CSS custom properties makes the theme easier to maintain and change.
+
+## Responsive Design
+
+A media query is used below 768px.
+
+On smaller screens:
+
+- The sidebar and main content use a single-column layout.
+- Navigation items can wrap.
+- The dashboard header becomes vertical.
+- Financial cards display one per row.
+
+The responsive layout was tested using the browser's DevTools Device Toolbar.
+
+## Card Micro-interactions
+
+The financial cards include hover and keyboard-focus effects.
+
+The effects use:
+
+- `transform`
+- `box-shadow`
+- CSS transitions
+
+The transition duration is 200ms, which is below the required 250ms maximum.
+
+The cards use `tabindex="0"` so they can also receive keyboard focus.
+
+## Dark Theme
+
+As a stretch goal, a dark theme was added using:
+
+```css
+@media (prefers-color-scheme: dark)
+````
+
+The dark theme overrides the CSS custom properties while keeping the same layout.
+
+## Technologies Used
+
+* HTML5
+* CSS3
+* CSS Grid
+* Flexbox
+* CSS Custom Properties
+* CSS Media Queries
+
+## Project Files
+
+* `index.html` - Contains the dashboard structure and static financial content.
+* `style.css` - Contains the dashboard layout, theme, responsive design, and micro-interactions.
+* `README.md` - Documents the project and the techniques used.
+
+## Author
+
+Mohamed Aden Abdullahi
+
+```
+```
