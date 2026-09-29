@@ -1,64 +1,38 @@
-# Personal Budget Tracker
+ ## Visual Design Challenge
 
-## Description
+This week, I improved the visual design of my existing Budget Tracker using CSS without adding new HTML structure or functionality.
 
-This project is a Personal Budget Tracker built using HTML and CSS. It allows users to view sample expenses, enter new expense information, and learn how to use the tracker.
+### Color Palette
 
-## Features
+I used a consistent green, white, and light-gray color palette throughout the application. Green is used for the main heading, buttons, table headers, and section headings, while white and light gray provide clean backgrounds and contrast.
 
-- Structured HTML expense table
-- Expense name, amount, category, and date columns
-- Add Expense form
-- Category dropdown with five options
-- Budgeting tips video using an iframe
-- Budget Tracker logo/image
-- Collapsible "How to use this tracker" section
-- Hover effects on table rows
-- Focus effects on form inputs
-- Advanced CSS selectors
+### Typography
 
-## Technologies Used
+I used Google Fonts to improve readability and visual hierarchy:
 
-- HTML5
-- CSS3
+* **Merriweather** for main headings and section headings.
+* **Open Sans** for body text, form elements, buttons, and table content.
 
-## HTML Elements Used
+### Table and Form Styling
 
-- `<table>`
-- `<thead>`
-- `<tbody>`
-- `<tr>`
-- `<th>`
-- `<td>`
-- `<form>`
-- `<input>`
-- `<select>`
-- `<option>`
-- `<button>`
-- `<img>`
-- `<iframe>`
-- `<details>`
-- `<summary>`
+The expense table and Add Expense form were improved with:
 
-## CSS Features
+* Padding and spacing
+* Borders
+* Rounded corners
+* Styled table headers
+* Alternating table row colors
+* Hover effects
+* Focus effects on form inputs
+* Consistent button styling
 
-The project uses:
+### CSS Box Model
 
-- Descendant selectors
-- Direct child selectors
-- `:nth-child()` pseudo-class
-- `:not()` pseudo-class
-- `:focus` pseudo-class
-- `:hover` pseudo-class
-- Borders and padding
-- Alternating table row colors
+I intentionally used the CSS box model throughout the application:
 
-## Project Files
+* **Margin** separates different sections.
+* **Padding** creates space inside cards, forms, and table cells.
+* **Borders** define sections and table cells.
+* **Border-radius** creates a modern rounded appearance.
 
-- `index.html` - Contains the structure and content of the Budget Tracker.
-- `style.css` - Contains the styling and advanced CSS selectors.
-- `README.md` - Explains the project and the features implemented.
-
-## Author
-
-Mohamed Aden Abdullahigit status
+The page heading, Add Expense form, and Expense Table are presented as distinct visual cards.

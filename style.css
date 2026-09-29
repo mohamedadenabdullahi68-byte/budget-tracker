@@ -1,69 +1,133 @@
+ /* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Page */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f7f6;
+    color: #333333;
     margin: 0;
     padding: 20px;
 }
 
+/* Main heading card */
 #main-heading {
+    font-family: 'Merriweather', serif;
     text-align: center;
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
+    background-color: #1f6f5b;
+    color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
 }
 
+/* Section headings */
+h2,
+h3 {
+    font-family: 'Merriweather', serif;
+    color: #1f6f5b;
+}
+
+/* Add Expense card */
 .add-expense {
-    background-color: #e8f5e9;
-    padding: 20px;
-    margin-bottom: 20px;
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #d9e2df;
+    border-radius: 10px;
 }
 
-.add-expense input {
+/* Form inputs and dropdown */
+.add-expense input,
+.add-expense select {
     display: block;
     width: 300px;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
+    border: 1px solid #b8c8c3;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
+/* Input focus effect */
+.add-expense input:focus,
+.add-expense select:focus {
+    border: 2px solid #1f6f5b;
+    outline: none;
+}
+
+/* Buttons */
+button {
+    background-color: #1f6f5b;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #155344;
+}
+
+/* Expense card */
 .expenses {
-    background-color: #fff3e0;
-    padding: 20px;
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #d9e2df;
+    border-radius: 10px;
 }
 
+/* Expense table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
 
-/* Descendant selector */
+/* Table header */
+th {
+    background-color: #1f6f5b;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #155344;
+}
+
+/* Table cells */
+td {
+    padding: 12px;
+    border: 1px solid #d9e2df;
+}
+
+/* Alternating table rows */
+tr:nth-child(even) {
+    background-color: #e8f3ef;
+}
+
+tr:nth-child(odd) {
+    background-color: white;
+}
+
+/* Table hover */
+tr:hover {
+    background-color: #d5ebe4;
+}
+
+/* Advanced selectors from previous work */
 .add-expense-section input {
     padding: 10px;
     margin: 5px;
 }
 
-/* Direct child selector */
 .add-expense-section > h2 {
-    color: #2e7d32;
+    color: #1f6f5b;
 }
 
-/* Position pseudo-class */
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* Negation pseudo-class */
 input:not([type="submit"]) {
-    border: 1px solid #ccc;
-}
-
-/* Focus pseudo-class */
-input:focus {
-    border: 2px solid #4caf50;
-    outline: none;
-}
-
-/* Table hover */
-tr:hover {
-    background-color: #ddd;
-}
-
-/* Button cursor */
-button {
-    cursor: pointer;
+    border: 1px solid #b8c8c3;
 }
