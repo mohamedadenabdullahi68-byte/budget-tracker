@@ -1,115 +1,114 @@
-````markdown
-# SpendWise Dashboard
+ # SpendWise Dashboard
 
-## Week 4: CSS Grid & Flexbox Dashboard
+## Week 6: JavaScript Foundation
 
-This week, I rebuilt my Budget Tracker into a responsive SpendWise Dashboard Shell using modern CSS layout techniques.
+SpendWise is a personal budgeting dashboard that helps users understand their monthly budget, expenses, and remaining balance.
 
-The dashboard is a visual interface with realistic static financial information. No JavaScript functionality was added for this week's assignment.
+For Week 6, JavaScript was added to transform the dashboard from a purely visual interface into an application that can process budgeting data.
 
-## Dashboard Features
+## JavaScript Concepts Implemented
 
-The dashboard contains:
+### Variables
 
-- Sidebar navigation menu
-- Dashboard header
-- Monthly budget summary
-- Six financial category cards
-- Food
-- Transport
-- Rent
-- Entertainment
-- Savings
-- Utilities
+The project uses JavaScript variables to store budgeting information such as:
 
-## CSS Grid
+* Monthly budget
+* Total expenses
+* Remaining balance
+* Expense data
 
-CSS Grid is used to create the overall dashboard layout and organize the six financial category cards.
+The application uses both `let` and `const`.
 
-The desktop dashboard uses a sidebar and main content area. The category cards are arranged in a three-column grid.
+### Data Types
 
-## Flexbox
+The project uses:
 
-Flexbox is used inside:
+* Numbers for financial amounts
+* Strings for expense categories
+* Arrays for storing multiple expenses
+* Objects for storing individual expense information
 
-- Sidebar navigation
-- Dashboard header
-- Monthly budget summary
-- Individual financial cards
+Example:
 
-This creates flexible and organized content layouts.
+```javascript
+const expenses = [
+    { category: "Food", amount: 8500 },
+    { category: "Transport", amount: 5200 }
+];
+```
 
-## CSS Custom Properties
+## User Input
 
-The application uses CSS variables inside `:root` for the main theme.
+The application uses JavaScript `prompt()` to collect the user's monthly budget.
 
-Variables include:
+The input is converted from a string to a number using:
 
-- Brand color
-- Accent color
-- Surface color
-- Background color
-- Primary text color
-- Secondary text color
-- Border color
+```javascript
+Number(userBudget)
+```
 
-Using CSS custom properties makes the theme easier to maintain and change.
+This allows the value to be used in calculations.
 
-## Responsive Design
+## Budget Calculations
 
-A media query is used below 768px.
+SpendWise calculates the total expenses and remaining balance.
 
-On smaller screens:
+The remaining balance is calculated using:
 
-- The sidebar and main content use a single-column layout.
-- Navigation items can wrap.
-- The dashboard header becomes vertical.
-- Financial cards display one per row.
+```text
+Remaining Balance = Monthly Budget - Total Expenses
+```
 
-The responsive layout was tested using the browser's DevTools Device Toolbar.
+For example:
 
-## Card Micro-interactions
+```text
+Monthly Budget: KSh 50,000
+Total Expenses: KSh 47,000
+Remaining Balance: KSh 3,000
+```
 
-The financial cards include hover and keyboard-focus effects.
+## Functions
 
-The effects use:
+Reusable functions organize the application logic.
 
-- `transform`
-- `box-shadow`
-- CSS transitions
+### `calculateTotalExpenses()`
 
-The transition duration is 200ms, which is below the required 250ms maximum.
+Calculates the total amount of all expenses.
 
-The cards use `tabindex="0"` so they can also receive keyboard focus.
+### `calculateRemainingBalance()`
 
-## Dark Theme
+Calculates the remaining amount after expenses are subtracted from the budget.
 
-As a stretch goal, a dark theme was added using:
+Functions make the code easier to understand, maintain, and reuse.
 
-```css
-@media (prefers-color-scheme: dark)
-````
+## Console Output
 
-The dark theme overrides the CSS custom properties while keeping the same layout.
+The calculated results are displayed in the browser Developer Tools Console.
+
+The console displays:
+
+* Monthly Budget
+* Total Expenses
+* Remaining Balance
 
 ## Technologies Used
 
 * HTML5
 * CSS3
+* JavaScript
 * CSS Grid
 * Flexbox
 * CSS Custom Properties
-* CSS Media Queries
+* JavaScript Functions
+* JavaScript Arrays and Objects
 
 ## Project Files
 
-* `index.html` - Contains the dashboard structure and static financial content.
-* `style.css` - Contains the dashboard layout, theme, responsive design, and micro-interactions.
-* `README.md` - Documents the project and the techniques used.
+* `index.html` - Dashboard structure
+* `style.css` - Dashboard styling and responsive layout
+* `script.js` - Budget data, user input, calculations, and functions
+* `README.md` - Project documentation
 
 ## Author
 
 Mohamed Aden Abdullahi
-
-```
-```

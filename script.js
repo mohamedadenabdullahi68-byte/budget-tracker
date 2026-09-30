@@ -1,94 +1,74 @@
- const form = document.getElementById("expenseForm");
-const incomeForm = document.getElementById("incomeForm");
-const expenseList = document.getElementById("expenseList");
-const totalDisplay = document.getElementById("total");
-const incomeTotalDisplay = document.getElementById("incomeTotal");
-const balanceDisplay = document.getElementById("balance");
+ // ========================================
+// SpendWise - JavaScript Foundation
+// ========================================
 
-let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
-let incomes = JSON.parse(localStorage.getItem("incomes")) || [];
+// Application data
+let monthlyBudget = 50000;
+let totalExpenses = 0;
 
-function displayExpenses() {
-    expenseList.innerHTML = "";
+const expenses = [
+    { category: "Food", amount: 8500 },
+    { category: "Transport", amount: 5200 },
+    { category: "Rent", amount: 15000 },
+    { category: "Entertainment", amount: 3500 },
+    { category: "Savings", amount: 10000 },
+    { category: "Utilities", amount: 4800 }
+];
 
+
+// ========================================
+// Reusable Functions
+// ========================================
+
+// Calculate total expenses
+function calculateTotalExpenses(expenseList) {
     let total = 0;
 
-    expenses.forEach(function(expense, index) {
+    expenseList.forEach(function(expense) {
         total += expense.amount;
-
-        const li = document.createElement("li");
-        li.textContent = `${expense.name} - KSh ${expense.amount} - ${expense.category}`;
-
-        const deleteButton = document.createElement("button");
-        deleteButton.textContent = "Delete";
-
-        deleteButton.addEventListener("click", function() {
-            expenses.splice(index, 1);
-            localStorage.setItem("expenses", JSON.stringify(expenses));
-            displayExpenses();
-        });
-
-        li.appendChild(deleteButton);
-        expenseList.appendChild(li);
     });
 
-    totalDisplay.textContent = total;
-    updateBalance();
+    return total;
 }
 
-function displayIncome() {
-    let totalIncome = 0;
-
-    incomes.forEach(function(income) {
-        totalIncome += income.amount;
-    });
-
-    incomeTotalDisplay.textContent = totalIncome;
-    updateBalance();
+// Calculate remaining balance
+function calculateRemainingBalance(budget, expenses) {
+    return budget - expenses;
 }
 
-function updateBalance() {
-    const income = Number(incomeTotalDisplay.textContent);
-    const expensesTotal = Number(totalDisplay.textContent);
 
-    balanceDisplay.textContent = income - expensesTotal;
+// ========================================
+// Collect User Input
+// ========================================
+
+const userBudget = prompt(
+    "Enter your monthly budget in KSh:",
+    monthlyBudget
+);
+
+if (userBudget !== null && userBudget !== "") {
+    monthlyBudget = Number(userBudget);
 }
 
-form.addEventListener("submit", function(event) {
-    event.preventDefault();
 
-    const name = document.getElementById("expenseName").value;
-    const amount = Number(document.getElementById("amount").value);
-    const category = document.getElementById("category").value;
+// ========================================
+// Perform Calculations
+// ========================================
 
-    expenses.push({
-        name: name,
-        amount: amount,
-        category: category
-    });
+totalExpenses = calculateTotalExpenses(expenses);
 
-    localStorage.setItem("expenses", JSON.stringify(expenses));
+const remainingBalance = calculateRemainingBalance(
+    monthlyBudget,
+    totalExpenses
+);
 
-    form.reset();
-    displayExpenses();
-});
 
-incomeForm.addEventListener("submit", function(event) {
-    event.preventDefault();
+// ========================================
+// Display Results in Console
+// ========================================
 
-    const name = document.getElementById("incomeName").value;
-    const amount = Number(document.getElementById("incomeAmount").value);
-
-    incomes.push({
-        name: name,
-        amount: amount
-    });
-
-    localStorage.setItem("incomes", JSON.stringify(incomes));
-
-    incomeForm.reset();
-    displayIncome();
-});
-
-displayExpenses();
-displayIncome();
+console.log("========== SpendWise Budget Report ==========");
+console.log("Monthly Budget: KSh " + monthlyBudget);
+console.log("Total Expenses: KSh " + totalExpenses);
+console.log("Remaining Balance: KSh " + remainingBalance);
+console.log("=============================================");
